@@ -1,0 +1,23 @@
+# config/application.yml
+datasources:
+  postgres:
+    url: jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
+    driverClassName: org.postgresql.Driver
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+
+kestra:
+  repository:
+    type: postgres
+  storage:
+    type: local
+    local:
+      basePath: "/app/storage"
+  queue:
+    type: postgres
+  tasks:
+    tmpDir:
+      path: /tmp/kestra-wd/tmp
+  url: ${KESTRA_BASE_URL}
+
+  timezone: ${KESTRA_TIMEZONE}
