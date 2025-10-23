@@ -1,4 +1,3 @@
-# config/application.yml
 datasources:
   postgres:
     url: jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
